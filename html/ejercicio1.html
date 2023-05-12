@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de cuadros</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/utilidades.js"></script>
+</head>
+
+<body>
+ 
+    <script>
+        
+        //Definicion de la grilla
+
+        let grilla = createTag("div")
+        grilla.classList.add("grilla")
+
+        //Definicion de los recuadros
+
+        let pesa = createTag("div")
+        pesa.classList.add("pesa")
+
+        let simple = createTag("div")
+        simple.classList.add("simple")
+
+        let personajeCorriendo = createTag("div")
+        personajeCorriendo.classList.add("personaje")
+
+        let logo = createTag("div")
+        logo.classList.add("fondo_logo")
+        logo.classList.add("contenedor-centrado")
+
+        let messi = createTag("div")
+        messi.classList.add("messi")
+        messi.classList.add("contenedor-centrado")
+
+        let fitnes = createTag("div")
+        fitnes.classList.add("fondo_fitnes")
+
+        let codewatchers = createTag("div")
+        codewatchers.classList.add("etiqueta_code")
+
+        let formulario = createTag("div")
+        formulario.classList.add("formulario")
+
+        //Creacion del contenido del recuadro del icono Mancuerda
+
+        let imgPesa = createTagImage("../img/RECURSOS/pesa.png")
+        imgPesa.classList.add("imagen_pesa")
+
+        let tagH3Pesa = createTagWithText("h3", "Weight Training")
+        let tagPPesa = createTagWithText("p", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolorem, similique sunt quos tempore, corporis maiores")
+
+        addElementContainer(pesa, imgPesa)
+        addElementContainer(pesa, tagH3Pesa)
+        addElementContainer(pesa, tagPPesa)
+
+        //Creacion del contenido del recuadro donde solo hay texto (7 Day Free Trial)
+
+        let tagH3Simple = createTagWithText("h3", "7 Day FREE Trial")
+        let tagPSimple = createTagWithText("p", "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, delectus? Autem facere mollitia")
+
+        addElementContainer(simple, tagH3Simple)
+        addElementContainer(simple, tagPSimple)
+
+        //Creacion del contenido del recuadro del icono de una persona que corriendo
+
+        let imgPersonaCorriendo = createTagImage("../img/RECURSOS/correr.png")
+        imgPersonaCorriendo.classList.add("imagen_correr")
+
+        let tagH3PersonaCorriendo = createTagWithText("h3", "Cardio Workout")
+        let tagPPersonaCorriendo = createTagWithText("p", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dolorem, similique sunt quos tempore, corporis maiores")
+
+        addElementContainer(personajeCorriendo, imgPersonaCorriendo)
+        addElementContainer(personajeCorriendo, tagH3PersonaCorriendo)
+        addElementContainer(personajeCorriendo, tagPPersonaCorriendo)
+
+        //Creacion del contenido del recuadro del icono S o logo azul
+        let tagH3Logo = createTagWithText("h3", "Training Programs")
+        tagH3Logo.classList.add("texto-center")
+        addElementContainer(logo, tagH3Logo)
+
+        //Creacion del contenido del recuadro de Messi
+        let tagH3Messi = createTagWithText("h3", "Agility Training")
+        tagH3Messi.classList.add("texto-center")
+        addElementContainer(messi, tagH3Messi)
+
+        //Creacion del contenido del recuadro fitnes
+
+        let descripcionFitnes = createTag("div")
+        let tagH1Fitnes = createTagWithText("h1", "Fitness")
+        tagH1Fitnes.classList.add("texto_fitnes")
+
+        let tagPFitnes = createTagWithText("p", "What works for you")
+        tagPFitnes.classList.add('texto_fitnes_pequeño')
+
+        addElementContainer(descripcionFitnes, tagH1Fitnes)
+        addElementContainer(descripcionFitnes, tagPFitnes)
+        addElementContainer(fitnes, descripcionFitnes)
+
+        //Creacion del contenido del recuadro de Codewatchers
+
+        let fondoGrisCodewatchers = createTag("div")
+        fondoGrisCodewatchers.classList.add('fondo_gris')
+
+        let tagPCodewatchers = createTagWithText("p", "{;}CODEWATCHERS")
+        addElementContainer(fondoGrisCodewatchers, tagPCodewatchers)
+        addElementContainer(codewatchers, fondoGrisCodewatchers)
+
+        //Creacion del contenido del formulario
+
+        let contenidoFormulario = createTag("div")
+        contenidoFormulario.classList.add('centrar-formulario')
+
+        let tagH3Formulario = createTagWithText("h3", "Book a secsion")
+        let inputName = createTag("input")
+        inputName.classList.add('display-block')
+        inputName.classList.add('mb')
+        inputName.setAttribute("placeholder", "Name");
+        inputName.setAttribute("type", "text");
+
+        let inputEmail = createTag("input")
+        inputEmail.classList.add('display-block')
+        inputEmail.classList.add('mb')
+        inputEmail.setAttribute("placeholder", "Email Addres");
+        inputEmail.setAttribute("type", "text");
+
+        let textarea = createTag("textarea")
+        textarea.classList.add('display-block')
+        textarea.classList.add('mb')
+        textarea.setAttribute("placeholder", "Message");
+
+        let contenedorBoton = createTag('div')
+        contenedorBoton.classList.add('flex-end')
+
+        let boton = createTag("input")
+        boton.classList.add('btn-rojo')
+        boton.setAttribute("type", "submit");
+        boton.setAttribute("value", "Save Now");
+
+
+        addElementContainer(contenidoFormulario, inputName)
+        addElementContainer(contenidoFormulario, inputEmail)
+        addElementContainer(contenidoFormulario, textarea)
+
+        addElementContainer(contenedorBoton, boton)
+        addElementContainer(contenidoFormulario, contenedorBoton)
+
+        addElementContainer(formulario, tagH3Formulario)
+        addElementContainer(formulario, contenidoFormulario)
+
+
+        //Agregando cada recuadro en la grilla
+        addElementContainer(grilla, pesa)
+        addElementContainer(grilla, simple)
+        addElementContainer(grilla, personajeCorriendo)
+        addElementContainer(grilla, logo)
+        addElementContainer(grilla, messi)
+        addElementContainer(grilla, fitnes)
+        addElementContainer(grilla, codewatchers)
+        addElementContainer(grilla, formulario)
+
+        //Mostrar la grilla
+        addElement(grilla)
+
+
+
+
+    </script>
+
+</body>
+
+</html>
